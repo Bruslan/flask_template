@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fat Wizard</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="includes/css/training.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link type="text/css" rel="stylesheet" href="includes/css/bootstrap.min.css" />
+
+  <!-- Owl Carousel -->
+  <link type="text/css" rel="stylesheet" href="includes/css/owl.carousel.css" />
+  <link type="text/css" rel="stylesheet" href="includes/css/owl.theme.default.css" />
+    <link rel="stylesheet" href="includes/css/font-awesome.min.css">
+
+  <!-- Custom stlylesheet -->
+  <link type="text/css" rel="stylesheet" href="includes/css/style.css" />
+
+  
+</head>
+
+<body>
+
+
+
+  <nav id="" class="navbar " >
+      <div class="container fixed-top " style="background-color: white">
+
+
+
+        <!--  Main navigation  -->
+        <ul class="main-nav nav ">
+          <li><a class = "btn-link" href="/">Workout Beenden</a></li>
+      
+
+          <li><form action="/logout">
+    <button class="main-btn" style="background-color: rgb(233,103,89);">Abmelden</button>
+</form></li>
+        </ul>
+        <!-- /Main navigation -->
+
+      </div>
+    </nav>
+
+
+  <div id="app" class="fat-wizard">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center fat-wizard__header">
+          Wählen Sie Ihre Zonen Aus
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+      
+          <div v-for="(zoneParts, partName) in wizardFatZone" class="fat-wizard__image" :class="'fat-wizard__image--'+partName">
+            <button v-for="zone in zoneParts" class="fat-wizard__select-area" :class="[zone.class,
+                                        hoveredZone === zone.part ? 'fat-wizard__select-area--hovered' : '',
+                                        zoneIsSelected(zone.part) ? 'fat-wizard__select-area--selected' : '',
+                                        ]" @mouseenter="setHoverZone(zone.part)" @mouseleave="unsetHoverZone" @click.prevent="setSelectedZone(zone.part)" :name="zone.part" :title="wizardFatZoneMap[zone.part].name">
+                        </button>
+          </div>
+
+      </div>
+      <div class="col-">
+    
+        <ul class="fat-wizard__selected-list">
+          <li v-for="(item, index) in selectedZoneList" class="d-block">
+            <div>
+              ${ wizardFatZoneMap[item].name }
+             
+            </div>
+
+
+            <div>
+        
+              <i class="fa fa-times" aria-hidden="true" @click="removeSelectedZone(index)"></i>
+            </div>
+
+
+            <div>
+              
+            </div>
+            <div class ="jumbotron">
+
+              
+              <video width="400" controls>
+  <source src="includes/videos/rabit.mp4" type="video/mp4">
+  <source src="includes/videos/rabit.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<video width="400" controls>
+  <source src="includes/videos/rabit.mp4" type="video/mp4">
+  <source src="includes/videos/rabit.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+            </div>
+
+             <button class="btn btn-cta" @click="erledigt(index)">Fertig</button>
+          </li>
+        </ul>
+        <div v-if="selectedZoneList.length > 0">
+          <div class="fat-wizard__total-wrapper">
+            <div>
+       
+            </div>
+   
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+
+
+
+
+  <script src='https://unpkg.com/vue@2.4.0/dist/vue.min.js'></script>
+
+  
+
+    <script  src="includes/js/training.js"></script>
+  <script type="text/javascript" src="includes/js/jquery.min.js"></script>
+  <script type="text/javascript" src="includes/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="includes/js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="includes/js/jquery.magnific-popup.js"></script>
+  <script type="text/javascript" src="includes/js/main.js"></script>
+
+
+</body>
+
+</html>
