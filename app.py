@@ -94,6 +94,10 @@ def logout():
 def ernaehrung():
 	return render_template('ernaehrung.html', username = False)
 
+@app.route("/archif")
+@login_required
+def archif():
+	return render_template('archif.html', username = False)
 
 
 @app.route("/training")

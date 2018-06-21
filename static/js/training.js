@@ -21,7 +21,7 @@ var app = new Vue({
                 price: 1800
             },
             knee: {
-                name: 'Knie',
+                name: 'Schulter',
                 price: 1200
             },
             back: {
