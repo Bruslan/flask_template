@@ -579,10 +579,13 @@ header {
 }
 
 #home {
-    height: 100vh;
+    height: 50vh;
 }
 
 #home .home-wrapper {
+
+
+
     position: absolute;
     left: 0px;
     right: 0px;
@@ -597,7 +600,7 @@ header {
   text-transform: uppercase;
 }
 .home-content button {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .header-wrapper h2 {
