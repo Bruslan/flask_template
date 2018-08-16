@@ -11,6 +11,11 @@ $( document ).ready(function() {
     document.getElementById("Trainingseinheiten").innerHTML = stats["stats"]["trainingseinheiten"].toString();
     document.getElementById("Wochen").innerHTML = stats["stats"]["trainingswochen"].toString();
     document.getElementById("PerfekteWochen").innerHTML = stats["stats"]["perfektewoche"].toString();
+    var prozent = stats["stats"]["trainingswochen"]/16 *100
+
+    //console.log(prozent)
+    //console.log("style = width: "+prozent.toString()+"%")
+    document.getElementById("progressbar").setAttribute("style", "width: "+prozent.toString()+"%")
 
 });
 
