@@ -163,3 +163,47 @@ def delete_task():
 	except DoesNotExist as e:
 
 		return jsonify({'status':False})
+
+
+
+
+
+			print("ich bin in calculate workout")
+	maxworkout_in_week = 3
+	perfekte_woche = False
+
+	last_workout = alleworkouts.first()
+	print(last_workout.workout_nr)
+	first_workout_ofthe_week = alleworkouts[last_workout.workout_nr-1]
+	time_since_first_workout = (datetime.datetime.now() - first_workout_ofthe_week.created_at).days
+
+	if time_since_first_workout<=7 and last_workout.workout_nr<maxworkout_in_week-1:
+		last_workout.workout_nr +=1
+	elif time_since_first_workout> 7 and last_workout.workout_nr<maxworkout_in_week-1:
+		last_workout.workout_nr +=1
+	elif time_since_first_workout<=7 and last_workout.workout_nr==maxworkout_in_week-1:
+		print("elif gleich max")
+		last_workout.workout_nr +=1
+		perfekte_woche = True
+	elif time_since_first_workout>7 and last_workout.workout_nr>=maxworkout_in_week-1:
+		last_workout.week_nr +=1
+		last_workout.workout_nr =1
+	elif time_since_first_workout<7 and last_workout.workout_nr==maxworkout_in_week:
+		last_workout.workout_nr +=1
+
+	print(perfekte_woche)
+
+	try:
+		stats_obj = Stats.objects.get(user = current_user.id)
+		if perfekte_woche == True:
+			print("bin in der PerfektenWoche")
+			stats_obj.perfektewoche = stats_obj.perfektewoche +1
+		else:
+			stats_obj.perfektewoche = stats_obj.perfektewoche
+		stats_obj.trainingseinheiten = stats_obj.trainingseinheiten +1
+		stats_obj.trainingswochen = last_workout.week_nr
+		stats_obj.save()
+	except Exception as e:
+		print(e)
+
+	return last_workout.workout_nr, last_workout.week_nr
