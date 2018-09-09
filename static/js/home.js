@@ -5,12 +5,23 @@ $(document).ready(function() {
 
         var workouts = JSON.parse(callback);
 
+
         console.log(workouts);
 
 
         if (workouts["status"] == true) {
 
             var workouts_list = workouts["workouts"];
+            stufe = workouts_list[0]["stufe"];
+
+            var max_workout_nr;
+
+            if (stufe == 0) {
+                max_workout_nr = 3;
+
+            } else {
+                max_workout_nr = 4;
+            }
 
             var woche = workouts_list[0]["week_nr"];
             var first_workout = workouts_list[workouts_list.length - 1]["absolviert_am"];
@@ -22,6 +33,7 @@ $(document).ready(function() {
             var last_day_week = new Date(first_day_week);
             var second_workout_date = new Date(first_day_week);
             var third_workout_date = new Date(first_day_week);
+            var forth_workout_date = new Date(first_day_week);
 
 
             second_workout_date.setDate(second_workout_date.getDate() + 2);
@@ -29,7 +41,9 @@ $(document).ready(function() {
 
             console.log(second_workout_date);
             third_workout_date.setDate(second_workout_date.getDate() + 2);
+            forth_workout_date.setDate(third_workout_date.getDate() +2);
             third_workout_date.setHours(0, 0, 0, 0);
+            forth_workout_date.setHours(0, 0, 0, 0);
             last_day_week.setDate(last_day_week.getDate() + 7);
 
 
@@ -54,17 +68,109 @@ $(document).ready(function() {
                 var last_day_week_string = last_day_week.getDate().toString() + "." + (last_day_week.getMonth() + 1).toString();
 
 
-                var to_do_date = [first_day_week_string, second_workout_date, third_workout_date];
+                var to_do_date;
+                if (max_workout_nr == 3) {
+
+                    to_do_date = [first_day_week_string, second_workout_date, third_workout_date];
+
+                } else {
+                    console.log("Profis Timeline");
+                    to_do_date = [first_day_week_string, second_workout_date, third_workout_date, forth_workout_date];
+
+
+                    var Pause_li = document.createElement("li");
+                    Pause_li.setAttribute("class", "progress-step");
+
+                    span1 = document.createElement("span");
+                    span2 = document.createElement("span");
+                    span1.setAttribute("class", "progress-marker");
+                    span1.setAttribute("style", "color: grey");
+                    span2.setAttribute("class", "progress-text");
+
+                    span_h = document.createElement("h3");
+                    span_h.innerHTML = "⟲";
+
+                    span1.appendChild(span_h);
+
+                    h5_ = document.createElement("h5");
+                    h5_.setAttribute("class", "progress-title");
+                    h5_.innerHTML = "1 Tag Pause";
+                    span2.appendChild(h5_);
+                    Pause_li.appendChild(span1);
+                    Pause_li.appendChild(span2);
+                    
+
+
+                    var Pause_li2 = document.createElement("li");
+                    Pause_li2.setAttribute("class", "progress-step");
+
+                    span1_ = document.createElement("span");
+                    span2_ = document.createElement("span");
+                    span1_.setAttribute("id", "train4");
+                    span1_.setAttribute("class", "progress-marker");
+                    span1_.setAttribute("style", "color: green");
+                    span2_.setAttribute("class", "progress-text");
+
+                    span_h_ = document.createElement("h3");
+                    span_h_.innerHTML = "⟲";
+
+                    span1_.appendChild(span_h);
+
+                    h5_2 = document.createElement("h5");
+                    h5_2.setAttribute("class", "progress-title");
+                   
+
+
+                    bonus_button = document.createElement("a");
+                    bonus_button.setAttribute("class", "btn btn-light disabled");
+                    bonus_button.setAttribute("id", "trainingbutton4");
+                    bonus_button.setAttribute("href", "/training");
+
+                    // bonus_button.innerHTML("Bonus Trainingseinheit");
+                    h5_2.appendChild(bonus_button);
+
+                    sprechblase_ = document.createElement("p");
+                    sprechblase_.setAttribute("class", "progress-status sprechblase1");
+                    sprechblase_.setAttribute("id", "sprechblase4");
+                    sprechblase_.setAttribute("hidden","true")
+
+
+
+                    var Pause_li2 = document.createElement("li");
+                    Pause_li2.setAttribute("class", "progress-step");
+
+                    span2_.appendChild(h5_2);
+                    span2_.appendChild(sprechblase_);
+                    Pause_li2.appendChild(span1_);
+                    Pause_li2.appendChild(span2_);
+
+
+                    time_line_ul = document.getElementById("time_line");
+                    time_line_ul.appendChild(Pause_li);
+                    time_line_ul.appendChild(Pause_li2);
+
+                }
 
 
 
 
-                for (i = 1; i < 4; i++) {
+
+
+                for (i = 1; i < to_do_date.length + 1; i++) {
 
                     var zuerledigen_am = to_do_date[i - 1].toString().split(" ");
 
+                     if (i ==  to_do_date.length){
 
-                    document.getElementById("trainingbutton" + i.toString()).innerHTML = "Training " + i.toString() + " erst am " + zuerledigen_am[2] + " " + zuerledigen_am[1];
+
+                        document.getElementById("trainingbutton" + i.toString()).innerHTML = "Bonus Training " + i.toString() + " erst am " + zuerledigen_am[2] + "." + zuerledigen_am[1]+"."+zuerledigen_am[3];
+                     }else{
+
+                       
+                       document.getElementById("trainingbutton" + i.toString()).innerHTML = "Training " + i.toString() + " erst am " + zuerledigen_am[2] + "." + zuerledigen_am[1]+"."+zuerledigen_am[3]; 
+                     }
+
+                    
 
                 }
 
@@ -72,7 +178,26 @@ $(document).ready(function() {
 
                 {
 
+                    if (i ==  to_do_date.length){
+
+
                     if (today >= to_do_date[i]) {
+
+                        console.log("wir landen hier")
+
+                        document.getElementById("trainingbutton" + (i + 1).toString()).innerHTML = "Bonus Training " + (i + 1) + " starten";
+                        document.getElementById("trainingbutton" + (i + 1).toString()).setAttribute("class", "btn btn-light");
+
+                    }
+
+                    }else{
+
+
+                    }
+
+                    if (today >= to_do_date[i]) {
+
+                        console.log("wir landen hier")
 
                         document.getElementById("trainingbutton" + (i + 1).toString()).innerHTML = "Training " + (i + 1) + " starten";
                         document.getElementById("trainingbutton" + (i + 1).toString()).setAttribute("class", "btn btn-light");
@@ -104,12 +229,12 @@ $(document).ready(function() {
                     var erledigt_am_ = workouts_list[j]["absolviert_am"].toString().split(" ");
 
 
-                    document.getElementById("sprechblase" + workouts_list[j]["workout_nr"].toString()).innerHTML = "Workout erledigt am: " + erledigt_am_[1] + " " + erledigt_am_[2];
+                    document.getElementById("sprechblase" + workouts_list[j]["workout_nr"].toString()).innerHTML = "Workout erledigt am: " + erledigt_am_[1] + "." + erledigt_am_[2]+"."+erledigt_am_[3];
                     console.log(typeof workouts_list[j]["absolviert_am"])
                     document.getElementById("sprechblase" + workouts_list[j]["workout_nr"]).removeAttribute("hidden");
                 }
 
-            } else if (today.getDay() > last_day_week.getDay() && workouts_list[0]["workout_nr"] >= 2) {
+            } else if (today.getDay() > last_day_week.getDay() && workouts_list[0]["workout_nr"] >= max_workout_nr - 1) {
 
                 first_day_week.setDate(second_workout_date.getDate() + 7);
                 last_day_week.setDate(last_day_week.getDate() + 7);

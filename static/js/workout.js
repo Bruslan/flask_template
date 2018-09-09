@@ -21,7 +21,13 @@ anfaenger_texte ={
 
 
 
-
+fortgeschrittene_texte = {
+"1":{"trainingseinheit1":" Herzlich willkommen im neuen Level! Ihr seid nun keine Anfänger mehr.", "trainingseinheit2":" Euer Ehrgeiz und Einsatz bringt euch die Silbermedaille – Glückwunsch!", "trainingseinheit3":" Toll! Ihr habt die erste Woche im Fortgeschrittenen-Programm erfolgreich absolviert! ", "perfektewoche":" Wahnsinn! Die vierte Trainingseinheit diese Woche beschert euch die Perfekte Woche mit Zertifikat."},
+"2":{"trainingseinheit1":" Super, ihr bleibt dran! Oft geht es leichter als gedacht. Trainingswoche zwei in der neuen Niveaustufe habt ihr bereits begonnen. Weiter so!", "trainingseinheit2":" Zwei Drittel sind diese Woche geschafft! Macht weiter so und verfolgt gemeinsam eure Ziele!", "trainingseinheit3":" Die letzte reguläre Trainingseinheit für diese Woche habt ihr vollendet! Ihr habt noch nicht genug? Dann hängt noch ein Training dran und sichert euch euer nächstes „Perfekte Woche“-Zertifikat.", "perfektewoche":" Ihr seid wirklich keine Anfänger mehr! Eine neue Woche und ein neues Zertifikat für euch. Glückwunsch!"},
+"3":{"trainingseinheit1":" Mit jedem Training steigert ihr eure Kraft und Beweglichkeit! Arbeitet zusammen weiter an eurer Fitness.", "trainingseinheit2":" Runde 2 in dieser Woche ist geschafft, super! Durch euer regelmäßiges Training beugt ihr Verletzungen vor und haltet euch fit für den Alltag.", "trainingseinheit3":" Einheit 3 diese Woche habt ihr zusammen durchgezogen und wieder mal ein starkes Finish hingelegt! Ihr meint es geht noch stärker? Dann holt euch euer nächstes „Perfekte Woche“-Zertifikat mit Training Nr. 4!", "perfektewoche":" Starke Leistung! Mit jedem zusätzlichen Training holt ihr das Maximum aus euch raus! Euer nächstes Zertifikat für eine perfekte Woche! Seid stolz auf euch!"}, 
+"4":{"trainingseinheit1":" Wow! Bereits Trainingseinheit Nr. 10 in der neuen Niveaustufe. Ihr seid wirklich ein gutes Team!", "trainingseinheit2":" Die Mitte der Woche kann hart sein, aber ihr seid härter! Training 2 diese Woche ist absolviert und ihr seid ein Stück stärker!", "trainingseinheit3":" Wie immer habt ihr die Woche mit Power beendet und mit Power habt ihr auch eine weitere Woche durchgezogen! So sehen Gewinner aus! Gewinnt euer nächstes „Perfekte Woche“-Zertifikat mit einer weiteren Trainingseinheit.", "perfektewoche":" Ein „Perfekte Woche“-Zertifikat für ein perfektes Team!"}, 
+"5":{"trainingseinheit1":" Neue Woche, neue Möglichkeiten noch stärker zu werden! Zusammen geht es jedes Mal einen Schritt nach vorne.", "trainingseinheit2":" Mitte der Woche und ihr seid dran geblieben, gute Arbeit! Kämpft zusammen weiter!", "trainingseinheit3":" Wie immer habt ihr die Woche stark beendet um noch stärker zu werden! Verfolgt zusammen weiter eure Ziele! Noch nicht genug für diese Woche? Dann hängt noch ein Bonus-Training dran und sichert euch ein „Perfekte Woche“-Zertifikat.", "perfektewoche":" Wieder einmal habt ihr euch selbst besiegt und noch eine Einheit drangehangen. Das wird belohnt mit einem „Perfekte Woche“-Zertifikat. Wir sind stolz auf euch!"}, 
+"6":{"trainingseinheit1":" Mit voller Energie in die neue Woche gestartet! So muss das sein! Harte Arbeit zahlt sich aus, also bleibt dran und werdet jedes Training ein bisschen starker.", "trainingseinheit2":" Teamwork zahlt sich aus! Trainingseinheit 2 habt ihr zusammen durchgezogen, sehr gut!", "trainingseinheit3":" Ein starker Endspurt in Woche 6 – train together, stay together!", "perfektewoche":" Wieder einmal habt ihr euch selbst besiegt und noch eine Einheit drangehangen. Das wird belohnt mit einem „Perfekte Woche“-Zertifikat. Wir sind stolz auf euch!"} };
 
 
 
@@ -339,14 +345,14 @@ var aufwärmen_struct = {
 
 
 
-function create_workout_aufwärmen(div_id, video_titel_string, monat, element) {
+function create_workout_aufwärmen(div_id, video_titel_string, monat, element, stufe) {
 
 
 
 
-    var trainingswiederholungen = aufwärmen_struct[video_titel_string][0]["monat" + monat]
-    var trainingssätze = aufwärmen_struct[video_titel_string][0]["sätze"]
-    var pause = aufwärmen_struct[video_titel_string][0]["pause"]
+    var trainingswiederholungen = aufwärmen_struct[video_titel_string][stufe]["monat" + monat]
+    var trainingssätze = aufwärmen_struct[video_titel_string][stufe]["sätze"]
+    var pause = aufwärmen_struct[video_titel_string][stufe]["pause"]
     var trainingsanweisung_string = `Sätze: ${trainingssätze} - Wiederholungen: ${trainingswiederholungen} - Pause: ${pause}`
 
 
@@ -527,6 +533,10 @@ console.log(workouts);
             var stufe = workouts_list[0]["stufe"];
 
             Stufe_global = stufe;
+
+            
+
+
             // workouts_list[0]["stufe"];
             var S_grad = ["Anfänger", "Fortgeschrittene", "Profis"]
             document.getElementById("Schwierigkeitsgrad").innerHTML = S_grad[Stufe_global]
@@ -534,8 +544,8 @@ console.log(workouts);
 
 
                     aufwärmen_pool = ["Jumping-Jacks", "Pair-Cycling", "Boxing-Pads", "High Knees And Hold Squat"];
-                    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[0], monat, "1. ");
-                    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr], monat, "2. ");
+                    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[0], monat, "1. ", stufe);
+                    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr], monat, "2. ",stufe);
 
 
                     create_workout_kraft("kraft_videos", brust, monat, 0 ,stufe,"brust");
@@ -595,10 +605,21 @@ var workout={
 
                 train_beendet.innerHTML = anfaenger_texte[json_resp["workout_week"].toString()]["perfektewoche"];
 
+
                }
+
                else{
-               train_beendet.innerHTML = anfaenger_texte[json_resp["workout_week"].toString()]["trainingseinheit" + json_resp["workout_nr"].toString()];
-           }
+
+                //Bravo text
+                if (Stufe_global == 0){
+                        train_beendet.innerHTML = anfaenger_texte[json_resp["workout_week"].toString()]["trainingseinheit" + json_resp["workout_nr"].toString()];
+                }else if (Stufe_global==1){
+
+                     train_beendet.innerHTML = anfaenger_texte[json_resp["workout_week"].toString()]["trainingseinheit" + json_resp["workout_nr"].toString()];
+                }
+
+                       
+               }
 
             } else {
 
@@ -643,7 +664,7 @@ if (n.length<6)
 
     {
         console.log(n[i].value);
-        punkte_gesamt = punkte_gesamt + punkte[n[i].value]
+        punkte_gesamt = punkte_gesamt + punkte[n[i].value];
 
         if (punkte_gesamt<=300){
 
@@ -662,17 +683,20 @@ if (n.length<6)
     }
 
 
+
+
+
 Stufe_global = stufe;
 
-var S_grad = ["Anfänger", "Fortgeschrittene", "Profis"]
+var S_grad = ["Anfänger", "Fortgeschrittene", "Profis"];
 
-document.getElementById("Schwierigkeitsgrad").innerHTML = S_grad[Stufe_global]
+document.getElementById("Schwierigkeitsgrad").innerHTML = S_grad[Stufe_global];
 
 
 
-    aufwärmen_pool = ["Jumping-Jacks", "Pair-Cycling", "Boxing-Pads", "High Knees And Hold Squat"]
-    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[0], monat, "1. ");
-    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr], monat, "2. ");
+    aufwärmen_pool = ["Jumping-Jacks", "Pair-Cycling", "Boxing-Pads", "High Knees And Hold Squat"];
+    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[0], monat, "1. ",stufe);
+    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr], monat, "2. ",stufe);
 
 
     create_workout_kraft("kraft_videos", brust, monat, 0 ,stufe,"brust");
@@ -684,7 +708,7 @@ document.getElementById("Schwierigkeitsgrad").innerHTML = S_grad[Stufe_global]
         create_workout_dehnen("dehnen_div", dehnen, monat, 0 ,0,"dehnen");
         create_workout_dehnen("dehnen_div", dehnen, monat, 1 ,1,"dehnen");
 
-console.log("Globale Stufe = ", Stufe_global)
+console.log("Globale Stufe = ", Stufe_global);
 
 $('#exampleModalLong').modal('hide');
 }
@@ -694,5 +718,10 @@ console.log(punkte_gesamt);
 
 
 
+});
+
+
+$('#select_id').change(function(){
+    Stufe_global = $(this).val();
 });
 

@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/arrowprogress.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-    
-
     <title>Hello, world!</title>
     <style>
     video {
@@ -21,9 +18,8 @@
     </style>
     <style type="text/css">
     body {
- 
-       background-color: rgb(217,112,96);
-    
+
+        background-color: rgb(217, 112, 96);
     }
     </style>
 </head>
@@ -48,7 +44,7 @@
     </nav>
     <!-- Button trigger modal -->
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" data-keyboard ="false"  data-backdrop="static" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -207,16 +203,24 @@
         </div>
     </div>
     <!-- navbar end -->
-
-
     <!-- training div anfang -->
     <div class="containern mt-5 ">
 
         <div class="row text-center">
 
             <div class="bar__container ">
-                 <p id ="Schwierigkeitsgrad" class="text-white">Schwierigkeitsgrad</p>
+
+                <select id="select_id" class="form-control">
+                    <option selected="selected">Coming Soon</option>
+                    <option value="1" >Anfänger</option>
+                    <option value ="2">Fortgeschrittene</option>
+                    <option value="3">Profis</option>
+                </select>
+
+                <p id="Schwierigkeitsgrad" class="text-white">Schwierigkeitsgrad</p>
+
                 <ul class="bar" id="bar">
+
                     <li class="active">Aufwärmen</li>
                     <li>Kraft</li>
                     <li>Dehnen</li>
@@ -240,8 +244,9 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                ...
+                            <div class="text-left modal-body">
+                                <p>1. Um Verletzungen vorzubeugen ist es wichtig, sich richtig aufzuwärmen. Aus diesem Grund haben wir euch ein paar Übungen zusammengestellt, die eure Muskeln und euren Kreislauf auf 'Trainingstemperatur' bringen.</p>
+                                <p>2. Die Satz- und Wiederholungszahlen stellen beim Aufwärmen keine Vorgaben, sondern Empfehlungen dar. Solltet ihr mehr Sätze oder Wiederholungen machen wollen, so könnt ihr das gerne tun. Die Übungen stärken zusätlich eure Kraftausdauer und Ausdauer und wirken sich positiv auf euren Kreislauf und die Fettverbrennung aus.</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -250,16 +255,12 @@
                     </div>
                 </div>
                 <h3 class="card__title mb-3">Aufwärmen</h3>
-<!-- 
+                <!-- 
                 <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repr</p> -->
-
-
                 <center>
                     <div id="aufwärmvideos">
                     </div>
                 </center>
-
-
                 <div class="actions">
                     <a href="#" class="btn next mb-3">Weiter</a>
                 </div>
@@ -312,8 +313,14 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                ...
+                            <div class="text-left modal-body">
+                                <p>1. Der Partner, der die Dehnübung durchführt, muss die Dehnungsfähigkeit des zu dehnenden Sportlers sehr gut kennen.</p>
+                                <p>2. Der Sportler muss dem Trainingspartner während der jeweiligen Dehnungsphase mitteilen, ob die Dehnungsintensität richtig ist.</p>
+                                <p>3. Beide Partner müssen ein Stopzeichen (Wort oder Zeichen) vereinbaren, wenn während des Dehnens Schmerzen wegen Überdosierung entstehen sollten.</p>
+                                <p>4. Der Trainingspartner muss seine Hand- bzw. Stützgriffe so anlegen, dass er keine unangenehmen Kneif- oder Druckeffekte erzeugt, weil diese beim Sportler nicht nur Entspannung verhindern, sondern Abwehrspannungen erzeugen können.</p>
+                                <p>5. Während der einzelnen Übungen soll das Sprechen auf ein Minimum beschränkt bleiben.</p>
+                                <p>"6. Die Partnerübungen erfordern von beiden eine gesteigerte Aufmerksamkeit und Konzentration.</p>
+                                <p>7. Sollten während der Übung im Endanschlag Schmerzen auftreten, dann darf der Sportler nicht mit reflexartigen und unkontrollierten Ausweichbewegungen reagieren, weil sonst ein erhöhtes Verletzungsrisiko besteht. Es ist wichtig, dass der Partner auf die Zeichen des Sportlers sofort richtig reagiert.</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -322,7 +329,7 @@
                     </div>
                 </div>
                 <h3 class="card__title mb-3">Dehnen</h3>
-<!--                 <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, alias consectetur, iusto non aut, voluptate recusandae saepe amet aperiam libero voluptatum, numquam quia totam. Autem iure nihil iusto quos, consectetur.</p> -->
+                <!--                 <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, alias consectetur, iusto non aut, voluptate recusandae saepe amet aperiam libero voluptatum, numquam quia totam. Autem iure nihil iusto quos, consectetur.</p> -->
                 <center>
                     <div id="dehnen_div">
                     </div>
@@ -346,8 +353,14 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                ...
+                            <div class="text-left modal-body">
+                                <p>1. Der Partner, der die Dehnübung durchführt, muss die Dehnungsfähigkeit des zu dehnenden Sportlers sehr gut kennen.</p>
+                                <p>2. Der Sportler muss dem Trainingspartner während der jeweiligen Dehnungsphase mitteilen, ob die Dehnungsintensität richtig ist.</p>
+                                <p>3. Beide Partner müssen ein Stopzeichen (Wort oder Zeichen) vereinbaren, wenn während des Dehnens Schmerzen wegen Überdosierung entstehen sollten.</p>
+                                <p>4. Der Trainingspartner muss seine Hand- bzw. Stützgriffe so anlegen, dass er keine unangenehmen Kneif- oder Druckeffekte erzeugt, weil diese beim Sportler nicht nur Entspannung verhindern, sondern Abwehrspannungen erzeugen können.</p>
+                                <p>5. Während der einzelnen Übungen soll das Sprechen auf ein Minimum beschränkt bleiben.</p>
+                                <p>"6. Die Partnerübungen erfordern von beiden eine gesteigerte Aufmerksamkeit und Konzentration.</p>
+                                <p>7. Sollten während der Übung im Endanschlag Schmerzen auftreten, dann darf der Sportler nicht mit reflexartigen und unkontrollierten Ausweichbewegungen reagieren, weil sonst ein erhöhtes Verletzungsrisiko besteht. Es ist wichtig, dass der Partner auf die Zeichen des Sportlers sofort richtig reagiert.</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -357,20 +370,18 @@
                 </div>
                 <h3 class="card__title mb-3">Cooldown</h3>
                 <p class="card__text">Euer Training ist fast beendet. </p>
-                   <p> Nachdem ihr eure Kraft und Beweglichkeit trainiert habt ist es wichtig, nach dem Training wieder runterzufahren.
-Hierzu solltet ihr euch 2-3 Minuten Zeit nehmen um einen Ausgleich zum Training und einen Übergang in den restlichen Tag zu schaffen.
-Wie? Setzt euch dazu Rücken an Rücken in den Schneidersitz, schließt die Augen und atmet synchron tief in den Bauch für 2-3 Minuten. Achtet darauf, dass sich euer Bauch hebt und senkt während ihr atmet. 
-Versucht während den 2-3 Minuten, eure Gedanken auszuschalten und euch nur auf eure Atmung und die Synchronität mit eurem Partner zu konzentrieren. 
-Danach ist euer Training beendet.</p>
-
+                <p> Nachdem ihr eure Kraft und Beweglichkeit trainiert habt ist es wichtig, nach dem Training wieder runterzufahren.</p>
+                <p>Hierzu solltet ihr euch 2-3 Minuten Zeit nehmen um einen Ausgleich zum Training und einen Übergang in den restlichen Tag zu schaffen.</p>
+                <p>Wie? Setzt euch dazu Rücken an Rücken in den Schneidersitz, schließt die Augen und atmet synchron tief in den Bauch für 2-3 Minuten. Achtet darauf, dass sich euer Bauch hebt und senkt während ihr atmet. </p>
+                <p>Versucht während den 2-3 Minuten, eure Gedanken auszuschalten und euch nur auf eure Atmung und die Synchronität mit eurem Partner zu konzentrieren. Danach ist euer Training beendet.</p>
                 <div class="actions">
                     <a href="#" class="btn prev">Zurück</a>
-                    <a href="#"  class="btn next">Abschließen</a>
+                    <a href="#" class="btn next">Abschließen</a>
                 </div>
             </div>
             <div class="card text-center">
                 <h3 class="card__title">Bravo!</h3>
-                <p id= "training_zuende" class="card__text">
+                <p id="training_zuende" class="card__text">
                 </p>
                 <div class="actions">
                     <a href="/" class="btn">Abschließen</a>
@@ -388,7 +399,6 @@ Danach ist euer Training beendet.</p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="static/js/workout.js"></script>
-
     <!--     <script src="static/js/kraft.js"></script> -->
 </body>
 
