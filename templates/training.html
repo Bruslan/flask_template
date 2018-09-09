@@ -8,6 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/arrowprogress.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    
+
     <title>Hello, world!</title>
     <style>
     video {
@@ -17,7 +21,9 @@
     </style>
     <style type="text/css">
     body {
-        background-color: rgb(153, 204, 255);
+ 
+       background-color: rgb(217,112,96);
+    
     }
     </style>
 </head>
@@ -35,41 +41,184 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="unser_paarfit.html">Unser Paarfit <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Ernährung
-        </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Rezepte</a>
-                        <a class="dropdown-item disabled" href="#">Lebensmittel</a>
-                        <a class="dropdown-item disabled" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="home.html">Abmelden</a>
+                    <a class="nav-link" href="/">Abbrechen<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
     </nav>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" data-keyboard ="false"  data-backdrop="static" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Schwierigkeitsgrad ermitteln</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="Frage1" class="m-3">
+                        <h5>1. Wie oft treibt ihr wöchentlich Sport?</h5>
+                        <div class="row">
+                            <div class="col partner1">
+                                <p>Partner 1</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1">
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        gar nicht
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        1-2 Mal
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="3">
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        3 Mal und mehr
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col partner2">
+                                <p>Partner 2</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios4" value="1">
+                                    <label class="form-check-label" for="exampleRadios4">
+                                        gar nicht
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios5" value="2">
+                                    <label class="form-check-label" for="exampleRadios5">
+                                        1-2 Mal
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios6" value="3">
+                                    <label class="form-check-label" for="exampleRadios6">
+                                        3 Mal und mehr
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Frage2" class="m-3">
+                        <h5>2. Wie wichtig ist euch eine gesunde Ernährung?</h5>
+                        <div class="row">
+                            <div class="col partner1">
+                                <p>Partner 1</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios7" value="1">
+                                    <label class="form-check-label" for="exampleRadios7">
+                                        nicht sehr wichtig
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios8" value="2">
+                                    <label class="form-check-label" for="exampleRadios8">
+                                        wir versuchen darauf zu achten
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios9" value="3">
+                                    <label class="form-check-label" for="exampleRadios9">
+                                        sehr wichtig
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col partner2">
+                                <p>Partner 2</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios10" value="1">
+                                    <label class="form-check-label" for="exampleRadios10">
+                                        nicht sehr wichtig
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios11" value="2">
+                                    <label class="form-check-label" for="exampleRadios11">
+                                        wir versuchen darauf zu achten
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios12" value="3">
+                                    <label class="form-check-label" for="exampleRadios12">
+                                        sehr wichtig
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Frage3" class="m-3">
+                        <h5>3. Wie oft macht ihr Krafttraining?</h5>
+                        <div class="row">
+                            <div class="col partner1">
+                                <p>Partner 1</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios13" value="1">
+                                    <label class="form-check-label" for="exampleRadios13">
+                                        gar nicht
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios14" value="2">
+                                    <label class="form-check-label" for="exampleRadios14">
+                                        hin und wieder
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios18" value="3">
+                                    <label class="form-check-label" for="exampleRadios18">
+                                        regelmäßig
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col partner2">
+                                <p>Partner 2</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios15" value="1">
+                                    <label class="form-check-label" for="exampleRadios15">
+                                        gar nicht
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios16" value="2">
+                                    <label class="form-check-label" for="exampleRadios16">
+                                        hin und wieder
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios17" value="3">
+                                    <label class="form-check-label" for="exampleRadios17">
+                                        regelmäßig
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <center>
+                    <p id="checkbox_info" class="text-danger"></p>
+                </center>
+                <div class="modal-footer">
+                    <button type="button" id="stufe_ermitteln" class="btn btn-primary">Ermitteln</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- navbar end -->
+
+
     <!-- training div anfang -->
     <div class="containern mt-5 ">
+
         <div class="row text-center">
+
             <div class="bar__container ">
+                 <p id ="Schwierigkeitsgrad" class="text-white">Schwierigkeitsgrad</p>
                 <ul class="bar" id="bar">
                     <li class="active">Aufwärmen</li>
-                    <li>Kraf</li>
+                    <li>Kraft</li>
                     <li>Dehnen</li>
                     <li>Cooldown</li>
                     <li>Fertig</li>
@@ -78,53 +227,151 @@
         </div>
         <section id="cards">
             <div class="card text-center">
-                <h3 class="card__title">Aufwärmen</h3>
-                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repr</p>
+                <div class="text-right">
+                    <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-info">Info</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Aufwärmen info</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="card__title mb-3">Aufwärmen</h3>
+<!-- 
+                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repr</p> -->
+
+
                 <center>
                     <div id="aufwärmvideos">
                     </div>
                 </center>
+
+
                 <div class="actions">
-                    <a href="#" class="btn next">Next</a>
+                    <a href="#" class="btn next mb-3">Weiter</a>
                 </div>
             </div>
             <div class="card text-center">
-                <h3 class="card__title">Kraft</h3>
-                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, alias consectetur, iusto non aut, voluptate recusandae saepe amet aperiam libero voluptatum, numquam quia totam. Autem iure nihil iusto quos, consectetur.</p>
+                <div class="text-right">
+                    <button type="button" data-toggle="modal" data-target="#exampleModal2" class="btn btn-outline-info">Info</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Kraft Info</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="card__title mb-3">Kraft</h3>
+                <!-- <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, alias consectetur, iusto non aut, voluptate recusandae saepe amet aperiam libero voluptatum, numquam quia totam. Autem iure nihil iusto quos, consectetur.</p> -->
                 <center>
                     <div id="kraft_videos">
                     </div>
                 </center>
                 <div class="actions">
-                    <a href="#" class="btn prev">Prev</a>
-                    <a href="#" class="btn next">Next</a>
+                    <a href="#" class="btn prev">Zurück</a>
+                    <a href="#" class="btn next">Weiter</a>
                 </div>
             </div>
             <div class="card text-center">
-                <h3 class="card__title">Dehnen</h3>
-                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, alias consectetur, iusto non aut, voluptate recusandae saepe amet aperiam libero voluptatum, numquam quia totam. Autem iure nihil iusto quos, consectetur.</p>
-                <video width="800" controls>
-                    <source src="static/video/Beinbeuger.mp4" type="video/mp4">
-                </video>
+                <div class="text-right">
+                    <button type="button" data-toggle="modal" data-target="#exampleModal3" class="btn btn-outline-info">Info</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Dehnen Info</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="card__title mb-3">Dehnen</h3>
+<!--                 <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, alias consectetur, iusto non aut, voluptate recusandae saepe amet aperiam libero voluptatum, numquam quia totam. Autem iure nihil iusto quos, consectetur.</p> -->
+                <center>
+                    <div id="dehnen_div">
+                    </div>
+                </center>
                 <div class="actions">
-                    <a href="#" class="btn prev">Prev</a>
-                    <a href="#" class="btn next">Next</a>
+                    <a href="#" class="btn prev">Zurück</a>
+                    <a href="#" id="Abschließen" class="btn next">Weiter</a>
                 </div>
             </div>
             <div class="card text-center">
-                <h3 class="card__title">Cooldown</h3>
-                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, alias consectetur, iusto non aut, voluptate recusandae saepe amet aperiam libero voluptatum, numquam quia totam. Autem iure nihil iusto quos, consectetur.</p>
-                <video width="800" controls>
-                    <source src="static/video/Beinbeuger.mp4" type="video/mp4">
-                </video>
+                <div class="text-right">
+                    <button type="button" data-toggle="modal" data-target="#exampleModal4" class="btn btn-outline-info">Info</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cooldown Info</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="card__title mb-3">Cooldown</h3>
+                <p class="card__text">Euer Training ist fast beendet. </p>
+                   <p> Nachdem ihr eure Kraft und Beweglichkeit trainiert habt ist es wichtig, nach dem Training wieder runterzufahren.
+Hierzu solltet ihr euch 2-3 Minuten Zeit nehmen um einen Ausgleich zum Training und einen Übergang in den restlichen Tag zu schaffen.
+Wie? Setzt euch dazu Rücken an Rücken in den Schneidersitz, schließt die Augen und atmet synchron tief in den Bauch für 2-3 Minuten. Achtet darauf, dass sich euer Bauch hebt und senkt während ihr atmet. 
+Versucht während den 2-3 Minuten, eure Gedanken auszuschalten und euch nur auf eure Atmung und die Synchronität mit eurem Partner zu konzentrieren. 
+Danach ist euer Training beendet.</p>
+
                 <div class="actions">
-                    <a href="#" class="btn prev">Prev</a>
-                    <a href="#" id="Abschließen" class="btn next">Abschließen</a>
+                    <a href="#" class="btn prev">Zurück</a>
+                    <a href="#"  class="btn next">Abschließen</a>
                 </div>
             </div>
             <div class="card text-center">
                 <h3 class="card__title">Bravo!</h3>
-                <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, alias consectetur, iusto non aut, voluptate recusandae saepe amet aperiam libero voluptatum, numquam quia totam. Autem iure nihil iusto quos, consectetur.</p>
+                <p id= "training_zuende" class="card__text">
+                </p>
                 <div class="actions">
                     <a href="/" class="btn">Abschließen</a>
                 </div>
@@ -141,6 +388,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="static/js/workout.js"></script>
+
+    <!--     <script src="static/js/kraft.js"></script> -->
 </body>
 
 </html>

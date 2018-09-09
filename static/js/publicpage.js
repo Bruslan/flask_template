@@ -96,11 +96,11 @@ $('#sign-up').on('submit', function( event ) {
 
   // data parsing:
   var params = {};
-  params['name'] = document.getElementsByName('teamname')[0].value;
+  params['name'] = document.getElementById('teamname').value;
   
-  params['email'] = document.getElementsByName('email')[0].value;
+  params['email'] = document.getElementById('email').value;
 
-  params['password'] = document.getElementsByName('password')[0].value;
+  params['password'] = document.getElementById('password').value;
   
 
 

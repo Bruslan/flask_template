@@ -47,7 +47,7 @@ class Stats(db.Document):
 	perfektewoche = db.IntField(max_length=255, required=True)
 	trainingseinheiten = db.IntField(max_length=2000, required=True)
 	trainingswochen = db.IntField(max_length=2000, required=True)
-	stufe =  db.StringField(max_length=50, required=False)
+	stufe =  db.IntField(required=False)
 
 
 
@@ -57,7 +57,16 @@ class Workout(db.Document):
 	workout_id = db.StringField(max_length=255, required=True)
 	workout_nr = db.IntField(max_length=20, required=True)
 	week_nr = db.IntField(max_length=200, required=True)
-	
+	stufe = db.IntField(required=False)
 
+class Rezept(db.Document):
+	created_at = db.DateTimeField(default=datetime.datetime.now, required=True)
+	user = db.ReferenceField(User)
+	rezept_titel = db.StringField(max_length=255, required=True)
+	rezept_zubereitung = db.StringField( required=True)
+	bild = db.StringField(max_length=255)
+	zutaten = db.DictField()
+
+	
 
 

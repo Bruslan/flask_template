@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: 'Raleway', sans-serif !important;
+ 
+}
+
 .cf:before, .bar:before,
 .cf:after,
 .bar:after {
@@ -54,7 +59,7 @@ body {
 
 .btn {
   width: 100px;
-  background: #27AE60;
+  background: rgb(233,103,89);
   font-weight: bold;
   font-size: 14px;
   color: white;
@@ -127,7 +132,7 @@ body {
 
 .bar li.active
 {
-  color: #27AE60;
+  color: grey;
 }
 .bar li.active:before {
   background: #27AE60;
