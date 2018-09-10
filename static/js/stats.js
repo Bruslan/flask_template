@@ -16,7 +16,7 @@ if(stats.status)
     document.getElementById("Wochen").innerHTML = stats["stats"]["trainingswochen"].toString();
     document.getElementById("PerfekteWochen").innerHTML = stats["stats"]["perfektewoche"].toString();
     var prozent = stats["stats"]["trainingswochen"]/16 *100;
-    var prozent_perfektewochen = stats["stats"]["perfektewoche"]/8 *100;
+    var prozent_perfektewochen = stats["stats"]["perfektewoche"]/16 *100;
 
     //console.log(prozent)
     //console.log("style = width: "+prozent.toString()+"%")
@@ -26,7 +26,7 @@ if(stats.status)
 
 
     document.getElementById("progressbar_perfektewoche").setAttribute("style", "width: "+prozent_perfektewochen.toString()+"%");
-    document.getElementById("progress_perfektewoche").innerHTML = (stats["stats"]["perfektewoche"]).toString() +"/8";
+    document.getElementById("progress_perfektewoche").innerHTML = (stats["stats"]["perfektewoche"]).toString() +"/16";
 
 
     document.getElementById("progress_links").innerHTML = Stufen_[stats["stats"]["stufe"]];

@@ -45,7 +45,7 @@ $('#log-in').on('submit', function( event ) {
         var json_resp = JSON.parse(r.responseText);
         if (json_resp["status"] == true) {
           clearMsg();
-          addMsg(json_resp["msg"] + "Viel Spaß");
+          addMsg(json_resp["msg"]);
           
           setTimeout(function(){
 
@@ -116,8 +116,8 @@ $('#sign-up').on('submit', function( event ) {
         var json_resp = JSON.parse(r.responseText);
         if (json_resp["status"] == true) {
           clearMsg();
-          addMsg(json_resp["msg"] + " You can now login.");
-          addMsg("Page reload in 5 seconds.")
+          addMsg(json_resp["msg"] + ". Sie können sich nun anmelden");
+         
           setTimeout(function(){
             //location.reload();
           }, 5000);

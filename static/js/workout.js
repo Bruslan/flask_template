@@ -413,7 +413,7 @@ function create_workout_kraft(div_id, partie, monat, element,stufe,partie_string
 
 
     var element_string = (element + 1).toString()
-    aufwärm_titel.innerHTML = element_string +". "+ video_titel_string
+    aufwärm_titel.innerHTML = element_string +". "+ video_titel_string.split('_').join(' ');
 
     var anweisung = document.createElement("p")
     anweisung.innerHTML = trainingsanweisung_string
@@ -454,7 +454,7 @@ function create_workout_dehnen(div_id, partie, monat, element,stufe,partie_strin
     var trainingswiederholungen = partie[stufen[stufe]][video_titel_string]["Monat" + monat];
     var trainingssätze = partie[stufen[stufe]][video_titel_string]["Sätze"]
     var pause = partie[stufen[stufe]][video_titel_string]["Pause"]
-    var trainingsanweisung_string = `Sätze: ${trainingssätze} - Wiederholungen: ${trainingswiederholungen} - Pause: ${pause}`
+    var trainingsanweisung_string = `Sätze: ${trainingssätze} - Wiederholungen: ${trainingswiederholungen} - Pause: keine`;
 
 
     var aufwärm_div = document.getElementById(div_id)
@@ -463,7 +463,7 @@ function create_workout_dehnen(div_id, partie, monat, element,stufe,partie_strin
 
 
     var element_string = (element + 1).toString()
-    aufwärm_titel.innerHTML = element_string +". "+ video_titel_string;
+    aufwärm_titel.innerHTML = element_string +". "+ video_titel_string.split('_').join(' ');
 
     var anweisung = document.createElement("p")
     anweisung.innerHTML = trainingsanweisung_string
@@ -666,7 +666,7 @@ if (n.length<6)
         console.log(n[i].value);
         punkte_gesamt = punkte_gesamt + punkte[n[i].value];
 
-        if (punkte_gesamt<=300){
+        if (punkte_gesamt<300){
 
             stufe = 0;
 
