@@ -120,11 +120,7 @@ $(document).ready(function() {
                     span1_.setAttribute("class", "progress-marker");
                     span1_.setAttribute("style", "color: green");
                     span2_.setAttribute("class", "progress-text");
-
-                    span_h_ = document.createElement("h3");
-                    span_h_.innerHTML = "⟲";
-
-                    span1_.appendChild(span_h);
+                    
 
                     h5_2 = document.createElement("h5");
                     h5_2.setAttribute("class", "progress-title");
@@ -174,7 +170,7 @@ $(document).ready(function() {
 
                             // 2-> 4-> 6
 
-                                if (today >= to_do_date[i] && last_workout_nr == i-1) {
+                                if (today >= to_do_date[i-1] && last_workout_nr == i-1) {
 
                                     console.log("wir landen  auch hier");
 

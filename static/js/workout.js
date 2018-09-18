@@ -545,8 +545,12 @@ console.log(workouts);
 
                     aufwärmen_pool = ["Jumping-Jacks", "Pair-Cycling", "Boxing-Pads", "High Knees And Hold Squat"];
                     create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[0], monat, "1. ", stufe);
-                    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr], monat, "2. ",stufe);
+if(workout_nr == 4){
+create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr-1], monat, "2. ",stufe);
 
+}else{
+ create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr], monat, "2. ",stufe);
+}
 
                     create_workout_kraft("kraft_videos", brust, monat, 0 ,stufe,"brust");
                     create_workout_kraft("kraft_videos", schulter, monat, 1 ,stufe,"schulter");
@@ -696,8 +700,13 @@ document.getElementById("Schwierigkeitsgrad").innerHTML = S_grad[Stufe_global];
 
     aufwärmen_pool = ["Jumping-Jacks", "Pair-Cycling", "Boxing-Pads", "High Knees And Hold Squat"];
     create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[0], monat, "1. ",stufe);
-    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr], monat, "2. ",stufe);
 
+	if(workout_nr==4){
+ create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr-1], monat, "2. ",stufe);
+}else{
+
+    create_workout_aufwärmen("aufwärmvideos", aufwärmen_pool[workout_nr], monat, "2. ",stufe);
+}
 
     create_workout_kraft("kraft_videos", brust, monat, 0 ,stufe,"brust");
     create_workout_kraft("kraft_videos", schulter, monat, 1 ,stufe,"schulter");
